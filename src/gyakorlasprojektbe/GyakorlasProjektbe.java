@@ -15,13 +15,13 @@ public class GyakorlasProjektbe {
         boolean van = vanBenne13(lista);
         if (van) {
             System.out.println("van benne 13 ");
-        }else{
+        } else {
             System.out.println("Nincs benne");
         }
         int index = bekeres(lista);
         int szam = lista[index];
         oszto(lista[index]);
-        
+
     }
 
     private static int[] tomb(int db) {
@@ -54,23 +54,38 @@ public class GyakorlasProjektbe {
         return i;
 
     }
-    private static void oszto(int [] lista, int index){
+
+    private static void oszto(int[] lista, int index) {
         int szam = lista[index];
         oszto(szam);
     }
-    
-    
+
     private static void oszto(int szam) {
+        int oszto = 2;
+        boolean oszt = false;
+        int [] osztok = {};
+        while (szam % oszto == 0 && szam > 1) {
+            System.out.print(oszto);
+            oszt = true;
+            oszto++;
+        }
+        if (oszt) {
+            System.out.print("nem prim ");
+        } if (szam < 0) {
+            System.out.println("negativ szam");
+        } if (!oszt){
+            System.out.println("Prim szám");
+        }
     }
 
-    private static boolean vanBenne13(int [] lista ) {
+    private static boolean vanBenne13(int[] lista) {
         boolean van = false;
         int index = 0;
-        while (index < lista.length && ! (lista[index] == 13 )) {
-            
+        while (index < lista.length && !(lista[index] == 13)) {
+
             index++;
         }
-        return index < lista.length || index > lista.length;            
+        return index < lista.length || index > lista.length;
     }
 
 }
