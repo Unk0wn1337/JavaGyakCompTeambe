@@ -1,20 +1,36 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
-package gyakorlasprojektbe;
 
-/**
- *
- * @author Keni
- */
+package gyakorlasprojektbe;
+import java.util.Random;
+
 public class GyakorlasProjektbe {
 
-    /**
-     * @param args the command line arguments
-     */
+    
     public static void main(String[] args) {
-        // TODO code application logic here
+        program();
+    }
+
+    private static void program() {
+        int [] lista = tomb(5);
+        kiiras(lista);
+        
+    }
+    private static int[] tomb(int db) {
+        int [] tomb = new int [db];
+        Random rnd = new Random();
+        for (int i = 0; i < db; i++) {
+            int szam = rnd.nextInt(-15,16);
+            tomb[i] = szam;
+        }
+        return tomb;    
+    }
+
+    private static void kiiras(int[] lista) {
+       int i = 0;
+       while (i<lista.length-1) {
+            System.out.print(lista[i] + ",");
+           i++;
+       }
+        System.out.println("");
     }
     
 }
